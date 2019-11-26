@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "ListTasks";
+}
+
+@model List<Tasks>
+
+<h1>ListTasks</h1>
+
+<div class="row">
+    @foreach (Tasks task in Model)
+    {
+    <div class="col-lg-3">
+        <h3>@task.Name</h3>
+        <h3>@task.Details</h3>
+        <h3>@task.DueDate</h3>
+
+        <a href="../ListTasks/CompleteTask?id=@task.Name" class="btn-success">Mark @task.Name Complete?</a>
+        <a href="../ListTasks/DeleteTask?id=@task.Name" class="btn-danger">Delete @task.Name?</a>
+    </div>
+    }
+
+
+</div>
+
